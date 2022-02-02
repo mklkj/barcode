@@ -26,13 +26,14 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
+import java.nio.charset.StandardCharsets;
 
 import jp.co.rakuten.esd.barcode.Barcode;
 
 /**
  * Shape, which is used by {@link Barcode} to draw itself.
  */
-class Code128Shape extends Barcode.BarcodeShape {
+public class Code128Shape extends Barcode.BarcodeShape {
 
     private final String LOG_TAG = "Code128Shape";
 
@@ -63,7 +64,7 @@ class Code128Shape extends Barcode.BarcodeShape {
 
         // mEncodedBytes and mWidth variables will be initialised in native code
         try {
-            byte[] latinPayload = payload.getBytes("ISO-8859-1");
+            byte[] latinPayload = payload.getBytes(StandardCharsets.ISO_8859_1);
 
             ByteArrayOutputStream bos = new ByteArrayOutputStream(latinPayload.length + 1);
             bos.write(latinPayload);
