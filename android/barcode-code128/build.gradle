@@ -3,5 +3,5 @@ android.externalNativeBuild.cmake {
 }
 
 dependencies {
-	compile project(path: ':barcode')
+	implementation project(path: ':barcode')
 }

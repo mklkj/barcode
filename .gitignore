@@ -52,3 +52,4 @@ Doxyfile
 documentation.tag
 documentation/
 
+.cxx/
